@@ -24,7 +24,6 @@ public class jogarbingo {
 
         Bingo[] a = new Bingo[jogadores];
         
-
         while (i == 0) {
             System.out.println("DIGITE O NÚMERO DO JOGADOR PARA VER SUA CARTELA ou -1 PARA SAIR");
             numero_jogador=teclado.nextInt();

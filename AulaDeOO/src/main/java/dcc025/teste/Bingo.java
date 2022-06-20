@@ -4,19 +4,24 @@
  * and open the template in the editor.
  */
 package dcc025.teste;
+
+import java.text.DecimalFormat;
+
 /**
  *
  * @author ice
  */
 public class Bingo {
 
+    DecimalFormat df = new DecimalFormat("00");
+
     private static double numero_cartela = 0;
 
-    private int[][] cartela = new int[4][4];
+    private int[][] cartela = new int[5][5];
 
     public Bingo() {
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j <= 4; j++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 if (i == 0) {
                     cartela[j][i] = (int) (15 * Math.random());
                 }
@@ -38,22 +43,23 @@ public class Bingo {
                 }
 
             }
-            numero_cartela ++;
+            numero_cartela++;
         }
     }
 
     public void print_cartela() {
-        for (int i = 0; i <= 4; i++) {
-            for (int j = 0; j <= 4; j++) {
-                if(i!=2 && j!=2)
-                    System.out.print(cartela[i][j]);
-                
-                if(i==2 && j==2)
-                    System.out.print("@"); 
-                
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (i == 2 && j == 2) {
+                    System.out.print("$$ ");
+                } else {
+                    String s = df.format(cartela[i][j]);
+                    System.out.print(s + " ");
+                }
+
             }
             System.out.println("");
         }
-    System.out.println("");
+        System.out.println("");
     }
 }
